@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/smsListFragment">
+
+    <fragment
+        android:id="@+id/smsListFragment"
+        android:name="com.example.smsreaderproject.ui.sms_list.SmsListFragment"
+        android:label="fragment_sms_list"
+        tools:layout="@layout/fragment_sms_list" >
+        <action
+            android:id="@+id/action_smsListFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.smsreaderproject.ui.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <argument
+            android:name="address"
+            app:argType="string" />
+        <argument
+            android:name="message"
+            app:argType="string[]" />
+    </fragment>
+</navigation>
